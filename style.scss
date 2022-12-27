@@ -1,0 +1,27 @@
+body {
+  background: rgb(70, 65, 65);
+}
+
+.container {
+  margin: 100px auto;
+  max-width: 500px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 18px;
+  height: 18px;
+  background-color: rgb(5, 43, 15);
+  border: 1px solid rgb(0, 173, 14);
+  margin: 1px;
+  transition: 2.5s ease;
+  box-shadow: 0 0 10px #000;
+
+  &:hover {
+    transition: none;
+  }
+}
