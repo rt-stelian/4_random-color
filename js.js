@@ -1,19 +1,30 @@
 const board = document.querySelector('#board');
-const colors = ['#ff00a5', '#ff0026', '#ff5a00', '#ffd900', '#a5ff00', '#25ff00', '#0085ff', '#0005ff', '#7a00ff', '#fa00ff', '#ff0085', '#ff0005', '#d6ff00', '#56ff00', '#00ff29', '#00ffa8', '#00d6ff', '#0056ff'];
-const SQUARES = 500;
+const SQUARES = 1200
+
 
 for (let i = 0; i < SQUARES; i++) {
-	const square = document.createElement('div');
-	square.className = 'square';
-	board.append(square);
 
-	square.addEventListener('mouseover', () => setBgColor(square));
-	square.addEventListener('mouseleave', () => removeBgColor(square));
+	const square = document.createElement('div');
+	const circle = document.createElement('div');
+	square.className = 'squares';
+	circle.className = 'circle';
+	board.append(square);
+	square.append(circle);
+
+	square.addEventListener('mouseover', () => setBgColor(circle)
+	);
+	square.addEventListener('mouseleave', () => removeBgColor(circle));
 }
 
+
+
+
 function randomColor() {
-	const index = Math.floor(Math.random() * colors.length);
-	return colors[index];
+	let r = Math.floor(Math.random() * 256);
+	let g = Math.floor(Math.random() * 256);
+	let b = Math.floor(Math.random() * 256);
+	const color = `rgb(${r}, ${g}, ${b})`
+	return color
 }
 
 function setBgColor(el) {
